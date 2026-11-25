@@ -1,7 +1,7 @@
 import time
 from pageClasses.Login import SwagLabLoginPage
 from pageClasses.Home import SwagLabHomePage
-from utilityClasses.UtilityFile import ScreenshotFunction
+from utilityClasses.UtilityFile import CommonFunction
 
 
 class TestSwagLabLoginPage:
@@ -25,7 +25,7 @@ class TestSwagLabLoginPage:
 
         else:
             print("Login Test Case Failed")
-            ScreenshotFunction.captureSS(driver,request.node.name)
+            CommonFunction.captureSS(driver,request.node.name)
 
     def test_loginWithInvalidData(self, setup,request):
         driver = setup
@@ -45,7 +45,7 @@ class TestSwagLabLoginPage:
             assert True
         else:
             print("Login Failed Test is Failed")
-            ScreenshotFunction.captureSS(driver, request.node.name)
+            CommonFunction.captureSS(driver, request.node.name)
             assert False
 
         time.sleep(3)
