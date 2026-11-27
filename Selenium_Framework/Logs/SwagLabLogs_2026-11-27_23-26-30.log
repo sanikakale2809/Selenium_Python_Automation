@@ -1,0 +1,9 @@
+2026-11-27 23:27:04: WARNING: Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)
+2026-11-27 23:27:20: INFO: -----UN Entered-----
+2026-11-27 23:27:23: INFO: -----PWD Entered-----
+2026-11-27 23:27:25: INFO: -----Click on Login Button-----
+2026-11-27 23:27:27: INFO: ------Login Test is Passed-----
+2026-11-27 23:27:40: INFO: -----Username Entered-----
+2026-11-27 23:27:42: INFO: -----Password Entered-----
+2026-11-27 23:27:45: INFO: -----Click on Login Btn-----
+2026-11-27 23:27:47: INFO: ---Login Failed Test is Passed: Act & Exp login failed error message match---

@@ -1,0 +1,8 @@
+2026-11-27 23:38:28: INFO: -----UN Entered-----
+2026-11-27 23:38:30: INFO: -----PWD Entered-----
+2026-11-27 23:38:32: INFO: -----Click on Login Button-----
+2026-11-27 23:38:34: INFO: ------Login Test is Passed-----
+2026-11-27 23:38:37: INFO: -----Username Entered-----
+2026-11-27 23:38:39: INFO: -----Password Entered-----
+2026-11-27 23:38:41: INFO: -----Click on Login Btn-----
+2026-11-27 23:38:43: INFO: ---Login Failed Test is Passed: Act & Exp login failed error message match---

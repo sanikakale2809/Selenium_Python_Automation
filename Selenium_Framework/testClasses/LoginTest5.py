@@ -1,50 +1,46 @@
+# Call config.ini file in values in Test class
+
 import time
-from selenium import webdriver
 
 from pageClasses.Home import SwagLabHomePage
 from pageClasses.Login import SwagLabLoginPage
 from utilityClasses.UtilityFile import CommonFunction
 
+class TestSwagLabLoginPage:
+    def test_LoginWithValidData(self,setup,request):
+        driver = setup
 
-class Test_SwagLabLogin:
-
-    def test_TC1_loginWithValidData(self,setup,request):
-        driver=setup
-
-        loginObj = SwagLabLoginPage(driver)
+        loginObj=SwagLabLoginPage(driver)
         loginObj.enterUserName(CommonFunction.getAppCred("username"))
         time.sleep(2)
         loginObj.enterPassword(CommonFunction.getAppCred("password"))
-        time.sleep(3)
+        time.sleep(2)
         loginObj.clickOnLoginBtn()
-        time.sleep(3)
+        time.sleep(2)
 
         homeObj = SwagLabHomePage(driver)
-        actLogoText = homeObj.getLogoText()
-        expLogoText = "Swag Labs"
+        actHeaderName = homeObj.getLogoText()
+        expHeaderName = "Swag Labs"
 
-        if actLogoText == expLogoText:
+        if actHeaderName == expHeaderName:
             print("Login Test is Passed")
             assert True
         else:
             print("Login Test is Failed")
-            CommonFunction.captureSS(driver,request.node.name)
+            CommonFunction.captureSS(driver, request.node.name)
             assert False
 
-        time.sleep(2)
-        driver.quit()
+    def test_LoginWithInvalidData(self, setup, request):
+        driver = setup
 
-    def test_TC2_loginWithInvalidData(self,setup,request):
-        driver=setup
-
-        loginObj = SwagLabLoginPage(driver)
-        loginObj.enterUserName(CommonFunction.getAppCred("invalidUsername"))
+        login = SwagLabLoginPage(driver)
+        login.enterUserName(CommonFunction.getAppCred("invalidUsername"))
         time.sleep(2)
-        loginObj.enterPassword(CommonFunction.getAppCred("invalidPassword"))
-        time.sleep(3)
-        loginObj.clickOnLoginBtn()
-        time.sleep(3)
-        actLoginFailedErrorMsg = loginObj.getLoginFailedErrorMsg()
+        login.enterPassword(CommonFunction.getAppCred("invalidPassword"))
+        time.sleep(2)
+        login.clickOnLoginBtn()
+        time.sleep(2)
+        actLoginFailedErrorMsg = login.getLoginFailedErrorMsg()
         expLoginFailedErrorMsg = "Epic sadface: Username and password do not match any user in this service"
 
         if actLoginFailedErrorMsg == expLoginFailedErrorMsg:
@@ -57,4 +53,3 @@ class Test_SwagLabLogin:
 
         time.sleep(3)
         driver.quit()
-
