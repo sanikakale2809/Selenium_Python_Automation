@@ -12,6 +12,7 @@ from utilityClasses.UtilityFile import CommonFunction
 #     return driver
 
 #update setup fixture with parameterization
+# modify openBrowser fixture
 @pytest.fixture
 def setup(browser):
     if browser == "chrome":
@@ -47,7 +48,7 @@ def browser(request):
   return request.config.getoption("--browser")
 
 
-
+#It is hook for adding environment info into Report (customize info in report)
 @pytest.hookimpl(optionalhook=True)
 def pytest_metadata(metadata):
    metadata['Project Name'] = 'Swag Labs'

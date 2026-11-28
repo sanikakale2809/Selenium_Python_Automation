@@ -26,26 +26,26 @@ class CommonFunction:
         return value
 
 
-    # @staticmethod
-    # def getAppURL():
-    #     config = configparser.RawConfigParser()
-    #     config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")        #
-    #     value = config.get("App_Credentials", "URL")
-    #     return value
-    #
-    # @staticmethod
-    # def getAppUN():
-    #     config = configparser.RawConfigParser()
-    #     config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")  #
-    #     value = config.get("App_Credentials", "username")
-    #     return value
-    #
-    # @staticmethod
-    # def getAppPWD():
-    #     config = configparser.RawConfigParser()
-    #     config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")  #
-    #     value = config.get("App_Credentials", "password")
-    #     return value
+    @staticmethod
+    def getAppURL():
+        config = configparser.RawConfigParser()
+        config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")        #
+        value = config.get("App_Credentials", "URL")
+        return value
+
+    @staticmethod
+    def getAppUN():
+        config = configparser.RawConfigParser()
+        config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")  #
+        value = config.get("App_Credentials", "username")
+        return value
+
+    @staticmethod
+    def getAppPWD():
+        config = configparser.RawConfigParser()
+        config.read(".\\Selenium_Framework\\ConfigurationFiles\\config.ini")  #
+        value = config.get("App_Credentials", "password")
+        return value
 
     @staticmethod
     def loggen():

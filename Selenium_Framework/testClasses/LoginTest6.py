@@ -34,6 +34,8 @@ class TestSwagLabLoginPage:
             CommonFunction.captureSS(driver, request.node.name)
             assert False
 
+        driver.quit()
+
     def test_LoginWithInvalidData(self, setup, request):
         driver = setup
 
@@ -58,5 +60,5 @@ class TestSwagLabLoginPage:
             CommonFunction.captureSS(driver, request.node.name)
             assert False
 
-        time.sleep(3)
+
         driver.quit()
